@@ -1,12 +1,13 @@
-// variable 변수 사용하는 법
-
-const a = 5;
-const b = 2;
-const veryLongVariableName = 0; // camelCase
-const very_long_variable_name = 0; // snakeCase
-const myName = "nico";
+// const : 절대 불변
+// let 바뀔 수 있음
+let a = 5;
+let b = 2;
+let myName = "nico";
 
 console.log(a + b);
 console.log(a * b);
 console.log(a / b);
-console.log("hello " + myName);
+console.log("hello " + myName); // hello nico
+
+myName = "rami";
+console.log("hello2 " + myName); // hello2 rami
