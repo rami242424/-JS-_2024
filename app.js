@@ -27,10 +27,17 @@ console.log(player["name"], "접근법2");
 
 // objest 수정하기
 player.fat = false;
-console.log(player.fat, "수정");
+console.log(player.fat, "fat 수정");
 console.log(player);
+
+player.point = 100;
+console.log(player.point, "point 수정");
+console.log(player);
+
+
 
 // object 추가하기
 player.fav = "burger";
 console.log(player.fav, "추가");
 console.log(player);
+
