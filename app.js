@@ -1,43 +1,14 @@
-// variable로 만들기
-const playerName = "nico";
-const playerPoint = 100;
-const playerHandsome = true;
-const playerFat = "little bit";
+// 너무 길고 많다.
+// console.log("Hello my name is rami");
+// console.log("Hello my name is borami");
+// console.log("Hello my name is hope");
+// console.log("Hello my name is ramini");
 
-// player.name
-// player.point 식으로 만들면 더 좋을 것 같다. (console.log처럼)
-
-// array로 만들기
-const player1 = ["nico", 100, true, "little bit"];
-
-// object로 만들기
-const player = {
-    name : "rami",
-    point : 10,
-    fat : true,
+// 위코드 보완
+function sayHello(){
+    console.log("Hello my name is ");
 }
 
-// 접근법 1
-console.log(player);
-console.log(player.name);
-console.log(player.fat);
-
-// 접근법 2
-console.log(player["name"], "접근법2");
-
-// objest 수정하기
-player.fat = false;
-console.log(player.fat, "fat 수정");
-console.log(player);
-
-player.point = 100;
-console.log(player.point, "point 수정");
-console.log(player);
-
-
-
-// object 추가하기
-player.fav = "burger";
-console.log(player.fav, "추가");
-console.log(player);
-
+// console.log(sayHello()); // Hello my name is // undefined
+// console.log(sayHello); // ƒ sayHello(){console.log("Hello my name is ");}
+sayHello(); // Hello my name is  >> !!
