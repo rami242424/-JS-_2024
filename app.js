@@ -1,6 +1,6 @@
-const title = document.getElementById("title");
+// 한번에 많은 목록을 가져와야 할떄
+// const hellos = document.getElementsByClassName("hello");
+const title = document.querySelector(".hello h1");
 
-// console.dir(title);
-title.innerText = "got ya"; // javascript로 html변경!
-console.log(title.id);
-console.log(title.className);
+// console.log(hellos); 
+console.log(title); 
