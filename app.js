@@ -1,23 +1,5 @@
-const calculater = {
-    plus: function (a, b){
-        console.log("hello"); // hello
-        return a + b;
-        console.log("bye"); // 앞에 return으로 이미 함수가 끝나서 절대 출력되지않음!
-    },
+// parseInt :  A string to convert into a number. : string -> number
+// 예시 console.log(typeof "15", typeof parseInt("15")); // string, number
 
-    minus: function (a, b){
-        return a - b;
-    },
-    times: function (a, b){
-        return a * b;
-    },
-    divide: function (a, b){
-        return a / b;
-    },
-    power: function (a, b){
-        return a ** b;
-    },
-}
-
-const plusResult = calculater.plus(2, 3);
-// console.log(calculater.plus(2, 3));
+const age = parseInt(prompt("how old are you?"));
+console.log(age);
