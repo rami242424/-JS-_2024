@@ -1,15 +1,6 @@
-const age = parseInt(prompt("how old are you?"));
+document.title = "Hello, from app.js";
+//  <title>Hello, from HTML</title> 로 저장
 
-if(isNaN(age) || age < 0){ 
-    console.log("정수로 된 숫자를 입력하세요.");
-} else if(age < 18) {
-    console.log("You are too young to drink");
-} else if(age >= 18 && age <= 50){
-    console.log("You can drink");
-} else if(age > 50 && age <= 80) {
-    console.log("take care of your healthy");
-} else if(age === 100){
-    console.log("wow you are wise");
-} else if(age > 80){
-    console.log("You can do whatever you want");
-}
+// 이렇게 하면 웹 사이트 title은 app.js가 된다.
+
+// 콘솔창에서 document.title = "hello"; 를 통해서도 일시적인 변경이 가능하다.
