@@ -6,6 +6,10 @@ h1{
     color : cornflowerblue;
 }
 
-.active {
+.clicked {
     color: tomato;
+}
+
+.sexy-font {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
