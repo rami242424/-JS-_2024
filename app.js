@@ -11,7 +11,7 @@ function onLoginSubmit(event){
     const username = loginInput.value;
     // 입력한 이름 저장
     localStorage.setItem(USERNAME_KEY, username);
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+    // greeting.classList.remove(HIDDEN_CLASSNAME);
     paintGreetings(username);
 }
 
