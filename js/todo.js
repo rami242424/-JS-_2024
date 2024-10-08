@@ -12,17 +12,15 @@ function saveToDos(){
 
 
 function deleteTodo(event){
-    // console.log(event.composedPath())
-    // console.dir(event.target);
-    // console.log(event.target.parentElement.innerText);
     const li = event.target.parentElement;
     li.remove();
 }
 
 function paintToDo(newTodo){
     const li = document.createElement("li");
+    li.id= newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText = "❌";
     button.addEventListener("click", deleteTodo);
@@ -36,23 +34,22 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newToDo = toDoInput.value;
     toDoInput.value = "";
-    toDos.push(newToDo);
-    paintToDo(newToDo);
+    const newTodoObj = {
+        text: newToDo,
+        id: Date.now()
+    }
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos();
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
-// function sayHello(item){
-//     console.log("This is turn of ", item);
-// } // 밑에 화살표 함수랑 같다.
-
 const savedToDos = localStorage.getItem(TODOS_KEY);
-console.log(savedToDos, "savedToDos");
+
 
 if(savedToDos){
     const parsedToDos = JSON.parse(savedToDos);
-    // console.log(parsedToDos, "parsedToDos");
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 }
