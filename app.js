@@ -1,14 +1,7 @@
-const title = document.getElementById("hello");
+const h1 = document.querySelector("div.hello:first-child h1");
 
 function handleTitleClick(){
-    const currentColor = title.style.color;
-    let newColor;
-    if(currentColor === "blue"){
-        newColor = "white";
-    } else { // blue가 아니다
-        newColor = "blue";
-    }
-    title.style.color = newColor;
+    h1.classList.toggle("clicked");
 }
 
-title.addEventListener("click", handleTitleClick);
+h1.addEventListener("click", handleTitleClick);
