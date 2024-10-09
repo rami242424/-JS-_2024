@@ -1,5 +1,8 @@
-const hellos = document.querySelector("#hello");
-// const hellos = document.getElementById("hello");
+const title = document.getElementById("hello");
 
-
-console.log(hellos.innerText)
+function handleTitleClick(){
+    
+    console.log("title was clicked!!");
+    title.style.color = "blue";
+}
+title.addEventListener("click", handleTitleClick);
