@@ -1,7 +1,15 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+// loginForm을 정의할 필요가 있을 때,
+// const loginForm = document.querySelector("#login-form");
+// const loginForm = document.getElementById("login-form");
+// const loginInput = loginForm.querySelector("input");
+// const loginBtn = loginForm.querySelector("button");
 
-function handleTitleClick(){
-    h1.classList.toggle("clicked");
+// loginForm을 정의할 필요가 없을 때,
+const loginInput = document.querySelector("#login-form input");
+const loginBtn = document.querySelector("#login-form button");
+
+function handlebtnClick(){
+    console.log(loginInput.value);
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginBtn.addEventListener("click", handlebtnClick);
