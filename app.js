@@ -1,17 +1,14 @@
 const title = document.getElementById("hello");
 
 function handleTitleClick(){
-    console.log("title was clicked!!");
-    title.style.color = "blue";
+    const currentColor = title.style.color;
+    let newColor;
+    if(currentColor === "blue"){
+        newColor = "white";
+    } else { // blue가 아니다
+        newColor = "blue";
+    }
+    title.style.color = newColor;
 }
 
-function handleMouseEnter(){
-    title.innerText = "mouse enter";
-}
-
-function handleMouseLeave(){
-    title.innerText = "mouse leave";
-}
 title.addEventListener("click", handleTitleClick);
-title.addEventListener("mouseenter", handleMouseEnter);
-title.addEventListener("mouseleave", handleMouseLeave);
