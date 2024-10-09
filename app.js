@@ -1,24 +1,25 @@
 const caluculator = {
     plus : function (a, b){
-        console.log(a + b);
+        return a + b;
     },
     minus : function (a, b){
-        console.log(a - b);
+        return a - b;
     },
     divide: function (a, b){
-        console.log(a / b);
+        return a / b;
     },
     multiple : function (a, b){
-        console.log(a * b);
+        return a * b;
     }, 
     power : function (a, b){
-        console.log(a ** b);
+        return a ** b;
     }
 }
 
-
-caluculator.plus(1, 1); // 2
-caluculator.minus(10, 9); // 1
-caluculator.divide(10, 2); // 5
-caluculator.multiple(2, 3); // 6
-caluculator.power(2, 2); // 4
+const plusResult = caluculator.plus(2, 3);
+// console.log(plusResult);
+// 또는 콘솔창에 plusResult 만 입력해도 더해진 값이 출력 됨
+const minusResult = caluculator.minus(plusResult, 3);
+const divideResult = caluculator.divide(10, minusResult);
+const multipleResult = caluculator.multiple(2, divideResult);
+const powerResult = caluculator.power(multipleResult, 3);
