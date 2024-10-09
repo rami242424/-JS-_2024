@@ -8,9 +8,11 @@ const USERNAME_KEY = "username";
 function onLoginSubmit(event){
     event.preventDefault();
     const username = loginInput.value;
-    localStorage.setItem(USERNAME_KEY, username);
+    console.log(username);
+    localStorage.setItem("username", username);
+
     loginForm.classList.add(HIDDEN_CLASSNAME);
-    paintGreetings(username); // 중복코드 하나로 만들기
+    paintGreetings(username);
     
 }
 
@@ -18,8 +20,8 @@ loginForm.addEventListener("submit", onLoginSubmit);
 
 // 중복코드 하나로 만들기
 function paintGreetings(username){
-    greeting.classList.remove(HIDDEN_CLASSNAME);
     greeting.innerText = `hello ${username}`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
 // 내가 만든코드
@@ -40,11 +42,14 @@ function paintGreetings(username){
 // 니코 코드
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
-if(savedUsername === null){
+
+if(savedUsername === null){ // 저장된 유저정보가 없다.
     loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit",onLoginSubmit);
-} else {
-    paintGreetings(savedUsername); // 중복코드 하나로 만들기
+    loginForm.addEventListener("submit", onLoginSubmit);
+    // onLoginSubmit(); // 폼이 제출되지 않은 상태에서도 해당 함수가 실행될 수 있기 때문에 사용 ❌
+} else { // 저장 된 유저정보가 있다.
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    paintGreetings(savedUsername);
 }
 
 
