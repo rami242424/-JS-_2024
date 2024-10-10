@@ -46,7 +46,7 @@ const author = document.querySelector("#quote span:last-child");
 
 // quotes.length = 10, 0~9까지의 인덱스가 필요하다.
 
-const todaysQuote = quotes[Math.floor(Math.random(quotes) * quotes.length)];
+const todaysQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todaysQuote.quote;
 author.innerText = todaysQuote.author;
