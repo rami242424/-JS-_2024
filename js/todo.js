@@ -14,8 +14,10 @@ function saveToDos(){
 
 function deleteTodo(event){
     const li = event.target.parentElement;
-    console.log(li.id);
     li.remove()
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+    // toDo : toDos DB에 있는 요소 중 하나
+    saveToDos();
 }
 
 function paintToDo(newTodo){
@@ -63,6 +65,4 @@ if(savedToDos !== null){
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
 
-} else {
-    // 저장되있는게 없으면
-}
+} 
