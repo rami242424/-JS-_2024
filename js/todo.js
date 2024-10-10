@@ -21,8 +21,9 @@ function deleteToDo(event){
 // todo 그리는 역할
 function paintTodo(newTodo){
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const btn = document.createElement("button");
     btn.innerText = "❌";
 
@@ -38,8 +39,12 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value; 
     toDoInput.value = "";
-    toDos.push(newTodo);
-    paintTodo(newTodo);
+    const newTodoObj = {
+        text: newTodo,
+        id: Date.now()
+    }
+    toDos.push(newTodoObj);
+    paintTodo(newTodoObj);
     saveToDos()
 }
 
