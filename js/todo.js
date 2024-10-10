@@ -14,6 +14,7 @@ function saveToDos(){
 
 function deleteTodo(event){
     const li = event.target.parentElement;
+    console.log(li.id);
     li.remove()
 }
 
@@ -21,8 +22,9 @@ function paintToDo(newTodo){
     // todo를 그리는 역할 ul안에 li button 만들기
     // console.log("i will paint ", newTodo);
     const li = document.createElement("li");
+    li.id = newTodo.id;
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const btn = document.createElement("button");
     btn.innerText = "❌"
     li.appendChild(span);
@@ -35,8 +37,12 @@ function handleTodoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value = "";
-    toDos.push(newTodo);
-    paintToDo(newTodo);
+    const newTodoObj = {
+        text : newTodo,
+        id : Date.now(),
+    } 
+    toDos.push(newTodoObj);
+    paintToDo(newTodoObj);
     saveToDos();
 
     
