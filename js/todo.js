@@ -4,7 +4,7 @@ const toDoList = document.querySelector("#todo-list");
 
 const TODOS_KEY = "todos";
 
-const toDos = [];
+let toDos = [];
 
 // toDos array의 내용을 localStorage에 저장하는 함수
 function saveToDos(){
@@ -54,7 +54,8 @@ if(savedToDos !== null){
     // 로컬에 string으로 저장되었는 todos array로 바꾸기
     const parsedToDos = JSON.parse(savedToDos);
     // console.log(parsedToDos, "after parse");
-    parsedToDos.forEach((item) => console.log("hello", item));
+    toDos = parsedToDos;
+    parsedToDos.forEach(paintToDo);
 
 } else {
     // 저장되있는게 없으면
