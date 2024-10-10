@@ -5,7 +5,7 @@ const toDoList = document.querySelector("#todo-list");
 const TODOS_KEY = "todos";
 
 // newTodo가 추가되면 저장될 배열
-const toDos = [];
+let toDos = [];
 
 // toDos array를 localStorage에 맡는 형식으로 바꿔 넣기(저장하기)
 function saveToDos(){
@@ -50,5 +50,6 @@ const savedToDos = localStorage.getItem(TODOS_KEY);
 
 if(savedToDos !== null){
     const parsedTodo = JSON.parse(savedToDos); // string > array
-    parsedTodo.forEach((item) => console.log(item));
+    toDos = parsedTodo;
+    parsedTodo.forEach(paintTodo);
 }
