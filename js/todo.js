@@ -2,6 +2,14 @@ const toDoForm = document.querySelector("#todo-form");
 const toDoInput = document.querySelector("#todo-form input");
 const toDoList = document.querySelector("#todo-list");
 
+// newTodo가 추가되면 저장될 배열
+const toDos = [];
+
+// toDos array를 localStorage에 맡는 형식으로 바꿔 넣기(저장하기)
+function saveToDos(){
+    localStorage.setItem("todos", JSON.stringify(toDos));
+}
+
 function deleteToDo(event){
     // console.log(event.target.parentElement, "클릭한 btn의 li"); // 클릭된 btn의 li부모를 확인할 수 있음
     const li = event.target.parentElement; // 삭제하고 싶은 li = 클릭된 btn의 li
@@ -28,7 +36,9 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value; 
     toDoInput.value = "";
+    toDos.push(newTodo);
     paintTodo(newTodo);
+    saveToDos()
 }
 
 toDoForm.addEventListener("submit", handleToDoSubmit);
