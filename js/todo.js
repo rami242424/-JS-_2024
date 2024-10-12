@@ -11,7 +11,6 @@ function saveToDos(){
     localStorage.setItem(TODOS_KEY, JSON.stringify(toDos));
 }
 
-
 function deleteTodo(event){
     const li = event.target.parentElement;
     li.remove()
@@ -46,23 +45,17 @@ function handleTodoSubmit(event){
     toDos.push(newTodoObj);
     paintToDo(newTodoObj);
     saveToDos();
-
-    
-
 }
 
 toDoForm.addEventListener("submit", handleTodoSubmit);
 
-
-
 // 로컬에 저장되어있는 todos 불러오기(string으로 저장되어있음)
 const savedToDos = localStorage.getItem(TODOS_KEY);
-// console.log(savedToDos, "before parse");
+
 if(savedToDos !== null){
     // 로컬에 string으로 저장되었는 todos array로 바꾸기
     const parsedToDos = JSON.parse(savedToDos);
     // console.log(parsedToDos, "after parse");
     toDos = parsedToDos;
     parsedToDos.forEach(paintToDo);
-
 } 
